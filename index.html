@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loveucifer | Portfolio</title>
+    <style>
+        :root {
+            --bg: #000000;
+            --text: #ccc;
+            --text-main: #e0e0e0;
+            --text-light: #888;
+            --highlight-bg: #2a2a2a;
+            --highlight-border: #3a3a3a;
+        }
+
+        @font-face {
+            font-family: 'custom_mono';
+            src: url('https://fonts.gstatic.com/s/robotomono/v22/L0x5DF4xlVMF-BfR8bXMIjhGq3-cXbKDO1w.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'custom_mono', 'SF Mono', 'Consolas', 'Menlo', monospace;
+            font-size: 16px;
+            line-height: 1.7;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            padding: 3rem;
+        }
+
+        a {
+            color: var(--text);
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            transition: color 0.2s ease-in-out;
+        }
+
+        a:hover {
+            color: var(--text-main);
+        }
+        
+        .sidebar {
+            width: 150px;
+            flex-shrink: 0;
+            padding-right: 2rem;
+        }
+
+        .sidebar-nav a {
+            display: block;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar-nav a:before {
+            content: '>';
+            margin-right: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .main-content {
+            max-width: 800px;
+            padding-right: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        header .logo {
+            font-weight: bold;
+        }
+
+        .intro .highlight {
+            background-color: var(--highlight-bg);
+            border: 1px solid var(--highlight-border);
+            padding: 2px 6px;
+            border-radius: 4px;
+            white-space: nowrap;
+            margin: 0 2px;
+        }
+        
+        .intro p {
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        
+        .quick-links a {
+            margin-right: 1.5rem;
+        }
+        
+        .content-section {
+            margin-top: 4rem;
+        }
+
+        .content-section h2 {
+            font-weight: normal;
+            font-size: 1em;
+            margin-bottom: 2rem;
+        }
+        
+        .item-list {
+            max-width: 750px;
+        }
+
+        .list-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        
+        .list-item .name {
+            width: 150px;
+            flex-shrink: 0;
+            color: var(--text-main);
+        }
+        
+        .list-item .desc {
+            color: var(--text-light);
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .image-gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            border: 1px solid var(--highlight-border);
+        }
+        
+        .side-widget {
+            position: fixed;
+            top: 3rem;
+            right: 3rem;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .side-widget .tenor-gif-embed {
+            border: 1px solid var(--highlight-border);
+        }
+
+        @media (max-width: 1024px) {
+            .side-widget {
+                position: relative;
+                top: auto;
+                right: auto;
+                width: 100%;
+                margin-top: 4rem;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .side-widget .tenor-gif-embed {
+                max-width: 45%;
+            }
+            .main-content {
+                padding-right: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                padding: 1.5rem;
+            }
+            .sidebar {
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                margin-bottom: 2rem;
+            }
+            .sidebar-nav a {
+                margin-right: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <a href="philosophy.html">philosophy</a>
+            <a href="books.html">books</a>
+            <a href="projects.html">projects</a>
+            <a href="YOUR_RESUME_LINK.pdf" target="_blank">resume</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <a href="index.html" class="logo" style="text-decoration: none;">Arnav</a>
+        </header>
+
+        <section class="intro">
+            <p>Interested in the convergence of <span class="highlight">CS</span>, <span class="highlight">Finance</span> with a deep curiosity in<span class="highlight">AI</span>,<span class="highlight">ML</span> and their future applications.</p>
+            <p>Building [] and working on [] <span class="highlight">as of 2025</span>.</p>
+        </section>
+        
+        <section class="quick-links">
+            <a href="https://github.com/arnav7x" target="_blank">GitHub</a>
+            <a href="https://x.com/xsaiyanav" target="_blank">X</a>
+
+        </section>
+<!--         
+        <section id="environment" class="content-section">
+            <h2>Environment &rarr;</h2>
+            <div class="image-gallery">
+                <img src="https://github.com/loveucifer/dev/blob/main/codeeditor.png?raw=true" alt="Code editor screenshot">
+            </div>
+        </section> -->
+
+        <section id="toolkit" class="content-section">
+            <h2>Toolkit &rarr;</h2>
+            <div class="item-list">
+                <div class="list-item">
+                    <div class="name">Hardware</div>
+                    <div class="desc">
+                        M1 Macbook Air
+                        <br>
+                        iPhone 13 - 6GB / 128GB 
+                    </div>
+                </div>
+                 <div class="list-item">
+                    <div class="name">Languages</div>
+                    <div class="desc">
+                        <span class="highlight">C++</span> <span class="highlight">Python</span> <span class="highlight">JavaScript</span> <span class="highlight">HTML/CSS</span> <span class="highlight">SQL</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="name">Software</div>
+                    <div class="desc">
+                        <span class="highlight">Cursor</span> <span class="highlight">iTerm2</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="name">OS & Shell</div>
+                    <div class="desc">
+                        macOS<span class="highlight"> iTerm2</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+
+    <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+</body>
+</html>
+
