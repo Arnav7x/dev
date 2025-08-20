@@ -54,6 +54,13 @@
             padding-right: 2rem;
         }
 
+        /* When sidebar is placed inside main, make it full width */
+        .main-content .sidebar {
+            width: 100%;
+            padding-right: 0;
+            margin: 2rem 0;
+        }
+
         .sidebar-nav a {
             display: block;
             text-decoration: none;
@@ -196,16 +203,7 @@
 </head>
 <body>
 
-    <aside class="sidebar">
-        <nav class="sidebar-nav">
-            <a href="philosophy.html">philosophy</a>
-            <a href="books.html">books</a>
-            <a href="projects.html">projects</a>
-            <a href="YOUR_RESUME_LINK.pdf" target="_blank">resume</a>
-        </nav>
-    </aside>
-
-    <main class="main-content">
+goe    <main class="main-content">
         <header>
             <a href="index.html" class="logo" style="text-decoration: none;">Arnav</a>
         </header>
@@ -220,6 +218,15 @@
             <a href="https://x.com/xsaiyanav" target="_blank">X</a>
 
         </section>
+
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="philosophy.html">philosophy</a>
+                <a href="books.html">books</a>
+                <a href="projects.html">projects</a>
+                <a href="YOUR_RESUME_LINK.pdf" target="_blank">resume</a>
+            </nav>
+        </aside>
         
         <section id="environment" class="content-section">
             <h2>Environment &rarr;</h2>
