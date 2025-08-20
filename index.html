@@ -54,11 +54,56 @@
             padding-right: 2rem;
         }
 
-        /* When sidebar is placed inside main, make it full width */
-        .main-content .sidebar {
-            width: 100%;
-            padding-right: 0;
-            margin: 2rem 0;
+        /* Accordion styles for in-page sections */
+        .accordion details {
+            border-top: none;
+            padding: 0.75rem 0;
+        }
+        .accordion details:last-of-type { border-bottom: none; }
+        .accordion summary {
+            list-style: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            color: var(--text-main);
+        }
+        .accordion summary::-webkit-details-marker { display: none; }
+        .accordion summary::before {
+            content: '>';
+            margin-right: 0.75rem;
+            color: var(--text-light);
+            transition: transform 0.2s ease-in-out;
+        }
+        .accordion details[open] summary::before { transform: rotate(90deg); }
+
+        /* Single action row that looks like a summary */
+        .accordion .row {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            color: var(--text-main);
+            padding: 0.75rem 0;
+        }
+        .accordion .row::before {
+            content: '>';
+            margin-right: 0.75rem;
+            color: var(--text-light);
+        }
+
+        .quote {
+            display: block;
+            font-style: italic;
+            margin-bottom: 0.75rem;
+        }
+        .key-work {
+            font-style: normal;
+            color: var(--text-main);
+            font-weight: bold;
+        }
+        .book-title {
+            display: block;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
         }
 
         .sidebar-nav a {
@@ -203,7 +248,7 @@
 </head>
 <body>
 
-goe    <main class="main-content">
+    <main class="main-content">
         <header>
             <a href="index.html" class="logo" style="text-decoration: none;">Arnav</a>
         </header>
@@ -219,14 +264,186 @@ goe    <main class="main-content">
 
         </section>
 
-        <aside class="sidebar">
-            <nav class="sidebar-nav">
-                <a href="philosophy.html">philosophy</a>
-                <a href="books.html">books</a>
-                <a href="projects.html">projects</a>
-                <a href="YOUR_RESUME_LINK.pdf" target="_blank">resume</a>
-            </nav>
-        </aside>
+        <section id="sections" class="content-section">
+            <div class="accordion">
+                <details>
+                    <summary>philosophy</summary>
+                    <div class="item-list">
+                        <div class="list-item">
+                            <div class="name">René Descartes</div>
+                            <div class="desc">
+                                <span class="quote">"Cogito, ergo sum." (I think, therefore I am.)</span>
+                                <span class="key-work">Key Work:</span> Meditations on First Philosophy
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Aleister Crowley</div>
+                            <div class="desc">
+                                <span class="quote">"Do what thou wilt shall be the whole of the Law."</span>
+                                <span class="key-work">Key Work:</span> The Book of the Law
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Fyodor Dostoevsky</div>
+                            <div class="desc">
+                                <span class="quote">"To go wrong in one's own way is better than to go right in someone else's."</span>
+                                <span class="key-work">Key Work:</span> Notes from Underground
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">J. Krishnamurti</div>
+                            <div class="desc">
+                                <span class="quote">"Truth is a pathless land."</span>
+                                <span class="key-work">Key Work:</span> Freedom from the Known
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Helena Blavatsky</div>
+                            <div class="desc">
+                                <span class="quote">"There is no religion higher than truth."</span>
+                                <span class="key-work">Key Work:</span> The Secret Doctrine
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Dion Fortune</div>
+                            <div class="desc">
+                                <span class="quote">"Magic is the art of changing consciousness at will."</span>
+                                <span class="key-work">Key Work:</span> The Mystical Qabalah
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Alan Moore</div>
+                            <div class="desc">
+                                <span class="quote">"Ideas are bulletproof."</span>
+                                <span class="key-work">Notable Works:</span> Watchmen, V for Vendetta
+                            </div>
+                        </div>
+                    </div>
+                </details>
+                <details>
+                    <summary>books</summary>
+                    <div class="item-list">
+                        <div class="list-item">
+                            <div class="name">Mihaly Csikszentmihalyi </div>
+                            <div class="desc">
+                                <span class="book-title"> The Art Of Seeing </span>
+                                This study attempts to gain information concerning the receptive aesthetic experience by talking to museum professionals.
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Robert Greene</div>
+                            <div class="desc">
+                                <span class="book-title">The 48 Laws of Power</span>
+                                A pragmatic and controversial guide to understanding the dynamics of power and strategy.
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Fyodor Dostoevsky</div>
+                            <div class="desc">
+                                <span class="book-title">Crime and Punishment</span>
+                                A deep dive into the psychology of a man who tests moral boundaries.
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Franz Kafka</div>
+                            <div class="desc">
+                                <span class="book-title">The Metamorphosis</span>
+                                A profound and absurd novella on alienation, bureaucracy, and the human condition.
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">John Milton</div>
+                            <div class="desc">
+                                <span class="book-title">Paradise Lost</span>
+                                An epic poem that redefined the narrative of the Fall.
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Carl G. Jung</div>
+                            <div class="desc">
+                                <span class="book-title">Man and His Symbols</span>
+                                Jung's own introduction to his theories on the unconscious, archetypes, and the meaning of dreams.
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Neville Goddard</div>
+                            <div class="desc">
+                                <span class="book-title">The Law and the Promise</span>
+                                A foundational text on the power of imagination.
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">T. D. Ramakrishnan</div>
+                            <div class="desc">
+                                <span class="book-title">Francis Ittikora</span>
+                                A labyrinthine Malayalam novel weaving together history and mystery.
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Arthur Janov</div>
+                            <div class="desc">
+                                <span class="book-title">The Primal Wound</span>
+                                The influential exploration of how repressed early-life pain shapes behavior.
+                            </div>
+                        </div>
+                    </div>
+                </details>
+                <details>
+                    <summary>projects</summary>
+                    <div class="item-list">
+                        <div class="list-item">
+                            <div class="name">AI Presentation Maker</div>
+                            <div class="desc">
+                                Web app that uses Sarvam AI models to generate complete, multilingual PPTs from a topic.
+                                <br>
+                                <a href="https://github.com/loveucifer/sarvam-ai-cookbook/tree/main/examples/AI_Presentation_Architect" target="_blank" class="project-link">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Quick Start Chatbot</div>
+                            <div class="desc">
+                                Single-turn chatbot example using Sarvam AI Chat Completions API.
+                                <br>
+                                <a href="https://github.com/loveucifer/sarvam-ai-cookbook/tree/main/examples/QuickStart_Chatbot" target="_blank" class="project-link">View on GitHub &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Calorie Master</div>
+                            <div class="desc">
+                                AI tool that analyzes food images and estimates calories.
+                                <br>
+                                <a href="https://github.com/loveucifer/CALORIE-MASTER" target="_blank" class="project-link">View Source &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">speedDATE</div>
+                            <div class="desc">
+                                Dating algorithm written in Python.
+                                <br>
+                                <a href="https://github.com/loveucifer/SpeedDATE" target="_blank" class="project-link">View Source &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">easoku</div>
+                            <div class="desc">
+                                Sudoku solver in Python with an HTML frontend.
+                                <br>
+                                <a href="https://github.com/loveucifer/easoku" target="_blank" class="project-link">View Source &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="list-item">
+                            <div class="name">Ai canvas</div>
+                            <div class="desc">
+                                Use your finger to draw in the air.
+                                <br>
+                                <a href="https://github.com/loveucifer/Ai-Canvas/blob/main/index.html" target="_blank" class="project-link">View Source &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+                <div class="row" id="resume-row" data-href="YOUR_RESUME_LINK.pdf">resume</div>
+            </div>
+        </section>
         
         <section id="environment" class="content-section">
             <h2>Environment &rarr;</h2>
@@ -269,6 +486,21 @@ goe    <main class="main-content">
     </main>
     
 
+    <script>
+        document.addEventListener('click', function(event) {
+            var row = event.target.closest('#resume-row');
+            if (!row) return;
+            var href = row.getAttribute('data-href');
+            if (!href) return;
+            var a = document.createElement('a');
+            a.href = href;
+            a.setAttribute('download', '');
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+        });
+    </script>
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 </body>
 </html>
