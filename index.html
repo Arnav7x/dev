@@ -261,134 +261,12 @@
         <section class="quick-links">
             <a href="https://github.com/arnav7x" target="_blank">GitHub</a>
             <a href="https://x.com/xsaiyanav" target="_blank">X</a>
-
+            <a href="https://drive.google.com/YOUR_RESUME_LINK" target="_blank">Resume</a>
         </section>
 
         <section id="sections" class="content-section">
             <div class="accordion">
-                <details>
-                    <summary>Philosophy</summary>
-                    <div class="item-list">
-                        <div class="list-item">
-                            <div class="name">René Descartes</div>
-                            <div class="desc">
-                                <span class="quote">"Cogito, ergo sum." (I think, therefore I am.)</span>
-                                <span class="key-work">Key Work:</span> Meditations on First Philosophy
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">Aleister Crowley</div>
-                            <div class="desc">
-                                <span class="quote">"Do what thou wilt shall be the whole of the Law."</span>
-                                <span class="key-work">Key Work:</span> The Book of the Law
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">Fyodor Dostoevsky</div>
-                            <div class="desc">
-                                <span class="quote">"To go wrong in one's own way is better than to go right in someone else's."</span>
-                                <span class="key-work">Key Work:</span> Notes from Underground
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">J. Krishnamurti</div>
-                            <div class="desc">
-                                <span class="quote">"Truth is a pathless land."</span>
-                                <span class="key-work">Key Work:</span> Freedom from the Known
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">Helena Blavatsky</div>
-                            <div class="desc">
-                                <span class="quote">"There is no religion higher than truth."</span>
-                                <span class="key-work">Key Work:</span> The Secret Doctrine
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">Dion Fortune</div>
-                            <div class="desc">
-                                <span class="quote">"Magic is the art of changing consciousness at will."</span>
-                                <span class="key-work">Key Work:</span> The Mystical Qabalah
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">Alan Moore</div>
-                            <div class="desc">
-                                <span class="quote">"Ideas are bulletproof."</span>
-                                <span class="key-work">Notable Works:</span> Watchmen, V for Vendetta
-                            </div>
-                        </div>
-                    </div>
-                </details>
-                <details>
-                    <summary>Books</summary>
-                    <div class="item-list">
-                        <div class="list-item">
-                            <div class="name">Mihaly Csikszentmihalyi </div>
-                            <div class="desc">
-                                <span class="book-title"> The Art Of Seeing </span>
-                                This study attempts to gain information concerning the receptive aesthetic experience by talking to museum professionals.
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">Robert Greene</div>
-                            <div class="desc">
-                                <span class="book-title">The 48 Laws of Power</span>
-                                A pragmatic and controversial guide to understanding the dynamics of power and strategy.
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">Fyodor Dostoevsky</div>
-                            <div class="desc">
-                                <span class="book-title">Crime and Punishment</span>
-                                A deep dive into the psychology of a man who tests moral boundaries.
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">Franz Kafka</div>
-                            <div class="desc">
-                                <span class="book-title">The Metamorphosis</span>
-                                A profound and absurd novella on alienation, bureaucracy, and the human condition.
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">John Milton</div>
-                            <div class="desc">
-                                <span class="book-title">Paradise Lost</span>
-                                An epic poem that redefined the narrative of the Fall.
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">Carl G. Jung</div>
-                            <div class="desc">
-                                <span class="book-title">Man and His Symbols</span>
-                                Jung's own introduction to his theories on the unconscious, archetypes, and the meaning of dreams.
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">Neville Goddard</div>
-                            <div class="desc">
-                                <span class="book-title">The Law and the Promise</span>
-                                A foundational text on the power of imagination.
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">T. D. Ramakrishnan</div>
-                            <div class="desc">
-                                <span class="book-title">Francis Ittikora</span>
-                                A labyrinthine Malayalam novel weaving together history and mystery.
-                            </div>
-                        </div>
-                        <div class="list-item">
-                            <div class="name">Arthur Janov</div>
-                            <div class="desc">
-                                <span class="book-title">The Primal Wound</span>
-                                The influential exploration of how repressed early-life pain shapes behavior.
-                            </div>
-                        </div>
-                    </div>
-                </details>
-                <details>
+                <details open>
                     <summary>Projects</summary>
                     <div class="item-list">
                         <div class="list-item">
@@ -441,7 +319,6 @@
                         </div>
                     </div>
                 </details>
-                <div class="row" id="resume-row" data-href="YOUR_RESUME_LINK.pdf">Resume</div>
             </div>
         </section>
         
@@ -485,22 +362,6 @@
         </section>
     </main>
     
-
-    <script>
-        document.addEventListener('click', function(event) {
-            var row = event.target.closest('#resume-row');
-            if (!row) return;
-            var href = row.getAttribute('data-href');
-            if (!href) return;
-            var a = document.createElement('a');
-            a.href = href;
-            a.setAttribute('download', '');
-            a.style.display = 'none';
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-        });
-    </script>
     <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
 </body>
 </html>
