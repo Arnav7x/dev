@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Terminal, 
-  Cpu, 
-  Compass, 
-  GraduationCap, 
-  Wrench, 
+import {
+  Terminal,
+  Cpu,
+  Compass,
+  GraduationCap,
+  Wrench,
   FolderGit2,
   Activity,
   Radio,
@@ -14,11 +14,11 @@ import {
 import { PORTFOLIO_CONFIG } from '../portfolioData';
 import { audioSynth } from '../utils/audioSynth';
 
-export function Navbar({ 
-  isOverclocked, 
-  openTerminal, 
-  activeTheme, 
-  setTheme 
+export function Navbar({
+  isOverclocked,
+  openTerminal,
+  activeTheme,
+  setTheme
 }) {
   const [timeStr, setTimeStr] = useState('');
   const [activeSection, setActiveSection] = useState('me');
@@ -126,7 +126,7 @@ export function Navbar({
             {activeTheme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
           </button>
 
-          <button 
+          <button
             className="hud-cli-btn"
             onClick={openTerminal}
             title="Launch Terminal (Press ~)"
