@@ -1,0 +1,263 @@
+/* ==============================================================================
+   SYNAPSE ENGINEERING SPEC-SHEET DESIGN SYSTEM
+   Minimalist Industrial / Teenage Engineering & Braun Aesthetic
+   Palette: Warm Beige, Parchment, Architectural Millimeter Grid & Terracotta
+   ============================================================================== */
+
+:root {
+  /* Warm Beige Architectural Linen Palette */
+  --bg-deep: #f4efe6;
+  --bg-surface: #faf6f0;
+  --bg-card: #fdfbf7;
+  --bg-card-hover: #ffffff;
+  --bg-bezel: #ebe4d8;
+  --bg-input: #eee8dc;
+
+  /* Hairline Precision Borders */
+  --border-subtle: rgba(45, 40, 35, 0.08);
+  --border-medium: rgba(45, 40, 35, 0.16);
+  --border-bright: #c25e2e;
+  --border-dark: #1c1917;
+
+  /* Industrial Accents (Teenage Engineering / Braun homage) */
+  --primary: #c25e2e;          /* Terracotta / Industrial Safety Orange */
+  --primary-rgb: 194, 94, 46;
+  --primary-glow: rgba(194, 94, 46, 0.2);
+  --primary-subtle: rgba(194, 94, 46, 0.08);
+
+  --secondary: #92400e;        /* Deep Amber / Copper */
+  --accent-green: #3f6212;     /* Olive Lab Green */
+  --accent-danger: #dc2626;    /* Redline Alert */
+  --accent-slate: #475569;
+
+  /* Typography Colors */
+  --text-bright: #1c1917;      /* Rich Espresso Charcoal */
+  --text-main: #44403c;        /* Soft Charcoal Stone */
+  --text-muted: #78716c;       /* Neutral Muted Stone */
+  --text-dim: #a8a29e;         /* Light Hairline Stone */
+
+  /* Typography */
+  --font-display: 'Space Grotesk', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Space Grotesk', -apple-system, sans-serif;
+
+  /* Structural Dimensions */
+  --nav-height: 74px;
+  --container-max: 1240px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+}
+
+/* Palette Variations */
+body[data-theme='sage'] {
+  --bg-deep: #eeebe3;
+  --bg-surface: #f6f4ed;
+  --bg-card: #faf9f5;
+  --primary: #3f6212;
+  --primary-rgb: 63, 98, 18;
+  --primary-glow: rgba(63, 98, 18, 0.2);
+  --primary-subtle: rgba(63, 98, 18, 0.08);
+  --border-bright: #3f6212;
+}
+
+body[data-theme='monochrome'] {
+  --bg-deep: #f2ede4;
+  --bg-surface: #f9f6f0;
+  --bg-card: #ffffff;
+  --primary: #1c1917;
+  --primary-rgb: 28, 25, 23;
+  --primary-glow: rgba(28, 25, 23, 0.2);
+  --primary-subtle: rgba(28, 25, 23, 0.06);
+  --border-bright: #1c1917;
+}
+
+body[data-theme='dark'] {
+  --bg-deep: #11100f;
+  --bg-surface: #191715;
+  --bg-card: #211e1b;
+  --bg-card-hover: #2a2622;
+  --bg-bezel: #2c2824;
+  --bg-input: #28231f;
+  --border-subtle: rgba(255, 248, 235, 0.10);
+  --border-medium: rgba(255, 248, 235, 0.18);
+  --border-dark: #fff8eb;
+  --primary: #e77c4c;
+  --primary-rgb: 231, 124, 76;
+  --primary-glow: rgba(231, 124, 76, 0.24);
+  --primary-subtle: rgba(231, 124, 76, 0.14);
+  --secondary: #f0b46e;
+  --accent-green: #a3d36c;
+  --accent-slate: #b8c3d1;
+  --text-bright: #fff8eb;
+  --text-main: #e3dbd0;
+  --text-muted: #b7aea3;
+  --text-dim: #827a72;
+}
+
+body[data-theme='dark']::before {
+  background-image:
+    linear-gradient(to right, rgba(255, 248, 235, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 248, 235, 0.045) 1px, transparent 1px);
+}
+
+/* UNHINGED OVERCLOCK / REDLINE MODE */
+body.overclock-active {
+  --bg-deep: #fef2f2 !important;
+  --bg-surface: #fee2e2 !important;
+  --bg-card: #ffffff !important;
+  --primary: #dc2626 !important;
+  --primary-rgb: 220, 38, 38 !important;
+  --primary-glow: rgba(220, 38, 38, 0.35) !important;
+  --primary-subtle: rgba(220, 38, 38, 0.12) !important;
+  --border-bright: #dc2626 !important;
+}
+
+/* Base Reset & Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-deep);
+  color: var(--text-main);
+  font-family: var(--font-body);
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+  background-color: var(--bg-deep);
+  transition: background-color 0.4s ease;
+}
+
+/* Subtle Architectural Millimeter Grid Background */
+body::before {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  background-image: 
+    linear-gradient(to right, rgba(45, 40, 35, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(45, 40, 35, 0.035) 1px, transparent 1px);
+  background-size: 24px 24px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-deep);
+}
+::-webkit-scrollbar-thumb {
+  background: #d6cdbe;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Selection */
+::selection {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Container */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 28px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Section Header Structure */
+.section-wrapper {
+  padding: 84px 0 48px 0;
+  position: relative;
+}
+
+.section-lead-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  font-weight: 600;
+  color: var(--primary);
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+  padding: 4px 8px;
+  background: var(--primary-subtle);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xs);
+}
+
+.section-lead-tag .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary);
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.8vw, 2.7rem);
+  color: var(--text-bright);
+  font-weight: 700;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.section-title .section-idx {
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.section-subtitle {
+  font-size: 1.02rem;
+  color: var(--text-muted);
+  max-width: 680px;
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+/* Minimalist Precision Card */
+.cyber-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(45, 40, 35, 0.04), 0 4px 12px rgba(45, 40, 35, 0.02);
+}
+
+.cyber-card:hover {
+  border-color: var(--border-dark);
+  box-shadow: 0 8px 24px rgba(45, 40, 35, 0.08);
+  transform: translateY(-2px);
+}
